@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UShelf - Upload Book</title>
+    <link rel="stylesheet" href="..\static\styles\styles.css">
+    <script src="..\static\scripts\main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Upload Book</h1>
+        <nav>
+            <ul>
+                <li><a href="myshelf.html">My Shelf</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="calendar.html">Reading Schedule</a></li>
+                <li><a href="manage-invites.html">Manage Invites</a></li>
+                <li><a href="index.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Add a New Book to Your Shelf</h2>
+            <form id="upload-book-form" enctype="multipart/form-data">
+                <label for="book-name">Book Name:</label>
+                <input type="text" id="book-name" name="book-name" required>
+
+                <label for="author-name">Author Name:</label>
+                <input type="text" id="author-name" name="author-name" required>
+
+                <label for="book-image">Book Image (optional):</label>
+                <input type="file" id="book-image" name="book-image" accept="image/*">
+
+                <label for="book-description">Description (optional):</label>
+                <textarea id="book-description" name="book-description" maxlength="100"></textarea>
+
+                <label for="book-file">Upload File:</label>
+                <input type="file" id="book-file" name="book-file" accept=".pdf, .epub" required>
+
+                <button type="submit">Upload Book</button>
+            </form>
+            <p id="upload-message"></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 UShelf. All Rights Reserved.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

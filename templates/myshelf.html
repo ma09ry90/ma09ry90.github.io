@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UShelf - My Shelf</title>
+    <link rel="stylesheet" href="..\static\styles\styles.css">
+    <script src="..\static\scripts\main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>My Shelf</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="calendar.html">Reading Schedule</a></li>
+                <li><a href="manage-invites.html">Manage Invites</a></li>
+                <li><a href="index.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Your Personal Bookshelf</h2>
+            <button onclick="window.location.href='upload-book.html';">Upload Book</button>
+            <h3>Your Books:</h3>
+            <ul id="book-list">
+                <!-- Dynamically populated list of books uploaded by the user -->
+                <li>Book Title 1 by Author</li>
+                <li>Book Title 2 by Author</li>
+                <!-- etc. -->
+            </ul>
+        </section>
+
+        <section>
+            <h2>Shelves You're Invited To</h2>
+            <ul id="invited-shelf-list">
+                <!-- Dynamically populated list of shelves the user is invited to -->
+                <li>Shelf 1 by [Owner Name]</li>
+                <li>Shelf 2 by [Owner Name]</li>
+                <!-- etc. -->
+            </ul>
+        </section>
+
+        <section>
+            <h2>Invite People to Your Shelf</h2>
+            <form id="invite-form">
+                <label for="invite-email">Enter Email:</label>
+                <input type="email" id="invite-email" name="invite-email" required>
+                <button type="submit">Send Invitation</button>
+            </form>
+            <p id="invite-message"></p>
+        </section>
+    </main>
+  
+    <form method="GET" action="{{ url_for('search') }}">
+        <input type="text" name="query" placeholder="Search by book name or author">
+        <button type="submit">Search</button>
+    </form>
+    <footer>
+        <p>&copy; 2024 UShelf. All Rights Reserved.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
